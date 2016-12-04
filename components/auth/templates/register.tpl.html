@@ -1,0 +1,75 @@
+<div class="row">
+    <div class="col-md-4 col-md-offset-4">
+        <div class="card card-container">
+            <img id="profile-img" class="profile-img-card" src="//ssl.gstatic.com/accounts/ui/avatar_2x.png" />
+            <div class="error-msg text-center" ng-if="authCtrl.showError">
+                {{ authCtrl.authErrorMsg }}
+            </div>
+
+            <form name="signUpForm" class="form-signin" novalidate>
+                <input type="hidden" ng-value="authType.isLogin = false">
+                <span id="reauth-email" class="reauth-email"></span>
+                <input type="text"
+                       name="username"
+                       class="form-control"
+                       placeholder="User Name"
+                       ng-model="user_credentials.username"
+                       ng-minlength="3"
+                       ng-focus="authCtrl.showError = false"
+                       required>
+                <div class="valid-errors" ng-messages="signUpForm.username.$error" ng-if="signUpForm.username.$touched">
+                    <p ng-message="minlength">Username is too short.</p>
+                    <p ng-message="required">This field is required!</p>
+                </div>
+
+                <input type="email"
+                       name="email"
+                       class="form-control"
+                       placeholder="Email address"
+                       ng-model="user_credentials.email"
+                       ng-focus="authCtrl.showError = false"
+                       required>
+                <div class="valid-errors" ng-messages="signUpForm.email.$error" ng-if="signUpForm.email.$touched">
+                    <p ng-message="email">This needs to be a valid email</p>
+                    <p ng-message="required">This field is required!</p>
+                </div>
+
+                <input type="password"
+                       name="password"
+                       class="form-control"
+                       placeholder="Password"
+                       ng-model="user_credentials.password"
+                       ng-minlength="6"
+                       ng-focus="authCtrl.showError = false"
+                       required>
+                <div class="valid-errors" ng-messages="signUpForm.password.$error" ng-if="signUpForm.password.$touched">
+                    <p ng-message="minlength">Your password is too short.</p>
+                    <p ng-message="required">This field is required!</p>
+                </div>
+
+                <input type="password"
+                       name="confirmPassword"
+                       class="form-control"
+                       placeholder="Confirm Password"
+                       ng-model="user_credentials.confirmPassword"
+                       compare-to="user_credentials.password"
+                       ng-focus="authCtrl.showError = false"
+                       required>
+                <div class="valid-errors" ng-messages="signUpForm.confirmPassword.$error" ng-if="signUpForm.password.$touched">
+                    <p ng-message="compareTo">Password confirmation must match.</p>
+                    <p ng-message="required">This field is required!</p>
+                </div>
+
+                <button class="btn btn-lg btn-primary btn-block btn-signin"
+                        type="submit"
+                        ng-disabled="signUpForm.$invalid"
+                        ng-click="authCtrl.authSubmit(user_credentials, authType)">
+                    Sign up
+                </button>
+            </form><!-- /form -->
+            <div class="bottom text-center">
+                Already have account? <a class="forgot-password" ui-sref="login"><b>Sign In</b></a>
+            </div>
+        </div><!-- /card-container -->
+    </div>
+</div>

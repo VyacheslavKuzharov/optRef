@@ -1,0 +1,55 @@
+<div class="row" ng-repeat="source in boardCtrl.userSources">
+    <div class="col-md-12">
+        <h4>PopCash {{ source.name }}</h4>
+        <div class="table-responsive">
+
+            <table id="statistic" class="table table-bordred table-striped">
+
+                <thead>
+                    <th></th>
+                    <th>TSC</th>
+                    <th>TC</th>
+                    <th>CL</th>
+                    <th>Spent</th>
+                    <th>Revenue</th>
+                    <th>Profit</th>
+                    <th>ROI</th>
+                </thead>
+                <tbody>
+
+                <tr>
+                    <td>Today</td>
+                    <td>{{ source.dash.today.tsc }}</td>
+                    <td>Not set</td>
+                    <td>Not set</td>
+                    <td>${{ source.dash.today.spend }}</td>
+                    <td>Not set</td>
+                    <td>Not set</td>
+                    <td>Not set</td>
+                </tr>
+                <tr>
+                    <td>Yesterday</td>
+                    <td>{{ source.dash.yesterday.tsc }}</td>
+                    <td>Not set</td>
+                    <td>Not set</td>
+                    <td>${{ source.dash.yesterday.spend }}</td>
+                    <td>Not set</td>
+                    <td>Not set</td>
+                    <td>Not set</td>
+                </tr>
+                <tr>
+                    <td>Last week</td>
+                    <td>{{ source.dash.week.tsc }}</td>
+                    <td>Not set</td>
+                    <td>Not set</td>
+                    <td>${{ source.dash.week.spend }}</td>
+                    <td>Not set</td>
+                    <td>Not set</td>
+                    <td>Not set</td>
+                </tr>
+                </tbody>
+
+            </table>
+        </div>
+    </div>
+</div>

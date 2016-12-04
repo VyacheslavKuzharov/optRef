@@ -1,0 +1,42 @@
+{
+  "name": "optimizer-frontend",
+  "version": "1.0.0",
+  "description": "Mobile optimizer frontend",
+  "main": "index.js",
+  "scripts": {
+    "build": "NODE_ENV=production node node_modules/.bin/webpack"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/paperclicks/mobile-optimizer-frontend.git"
+  },
+  "author": "Vyacheslav Kuzharov",
+  "license": "ISC",
+  "homepage": "https://bitbucket.org/paperclicks/mobile-optimizer-frontend#readme",
+  "dependencies": {
+    "angular": "^1.5.9",
+    "angular-animate": "^1.5.9",
+    "angular-formly": "^8.4.0",
+    "angular-formly-templates-bootstrap": "^6.4.0",
+    "angular-jwt": "^0.1.8",
+    "angular-messages": "^1.5.9",
+    "angular-storage": "0.0.15",
+    "angular-ui-bootstrap": "^2.3.0",
+    "angular-ui-notification": "^0.2.0",
+    "angular-ui-router": "^0.3.2",
+    "api-check": "^7.5.5",
+    "body-parser": "^1.15.2",
+    "bootstrap": "^3.3.7",
+    "express": "^4.14.0",
+    "node-sass": "^3.13.0",
+    "underscore": "^1.8.3"
+  },
+  "devDependencies": {
+    "css-loader": "^0.26.0",
+    "ng-annotate-loader": "^0.2.0",
+    "raw-loader": "^0.5.1",
+    "sass-loader": "^4.0.2",
+    "style-loader": "^0.13.1",
+    "webpack": "^1.13.3"
+  }
+}

@@ -1,0 +1,60 @@
+<div class="row">
+    <div class="col-md-4">
+        <div class="row">
+            <div class="col-md-6 text-center side-block">
+                <span>Mobile sources</span>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-8" ui-view>
+        <div class="row">
+            <div class="col-md-3 source-list-block"
+                 ng-class="resourcesCtrl.isActive ? '' : 'offline'"
+                 ng-repeat="resource in resourcesCtrl.userResources"
+                 ng-mouseover="hoverIn()"
+                 ng-mouseleave="hoverOut()">
+
+                <a class="thumbnail">
+                    <img ng-src="../assets/img/logo.png" alt="{{ resourcesCtrl.getName(resource) }}">
+                </a>
+
+
+                <div class="caption">
+                    <p class="text-center ">
+                        <strong>{{ resourcesCtrl.getName(resource) }}</strong>
+                        <br>
+                        <span class="alert-danger" ng-if="!resource.isVerified">Invalid API-Key</span>
+                    </p>
+                </div>
+
+                <div ng-show="hoverEdit" class="animate-show animate-tools">
+                    <div>
+                        <a ng-click="resourcesCtrl.editResource(resource)" class="source-tool">
+                            <span class="glyphicon glyphicon-pencil"></span>
+                        </a>
+                    </div>
+
+                    <div>
+                        <a ng-click="resourcesCtrl.disableResource(resource, !resource.isActive)" class="source-tool">
+                            <span ng-class="resource.isActive ? 'glyphicon glyphicon-off' : 'glyphicon glyphicon-play-circle'"></span>
+                        </a>
+                    </div>
+                    <div>
+                        <a ng-click="resourcesCtrl.removeResource(resource)" class="source-tool">
+                            <span class="glyphicon glyphicon-trash"></span>
+                        </a>
+                    </div>
+                </div>
+
+            </div>
+
+            <button ui-sref="resource.new"
+                    class="btn btn-xlarge">
+                <span class="glyphicon glyphicon-plus-sign" ></span>
+            </button>
+
+        </div>
+
+
+    </div>
+</div>

@@ -1,0 +1,13 @@
+<form class="form-horizontal" ng-submit="newRsrcCtrl.addNewResource(newRsrcCtrl.resource)" novalidate>
+    <h1>{{ newRsrcCtrl.formTitle }}</h1>
+    <formly-form model="newRsrcCtrl.resource"
+                 fields="newRsrcCtrl.resourceFields"
+                 form="newRsrcCtrl.resourceForm">
+        <div class="pull-right">
+            <a ui-sref="resource" class="btn btn-default">Cancel</a>
+            <button type="submit"
+                    class="btn btn-primary"
+                    ng-disabled="newRsrcCtrl.resourceForm.$invalid">Submit</button>
+        </div>
+    </formly-form>
+</form>

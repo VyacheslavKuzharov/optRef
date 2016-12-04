@@ -1,0 +1,11 @@
+<form class="form-horizontal" ng-submit="editRsrcCtrl.saveEditResource(editRsrcCtrl.resource)" novalidate>
+    <h1>Edit Mobile resource</h1>
+    <formly-form model="editCtrl.resource"
+                 fields="editRsrcCtrl.resourceFields"
+                 form="editRsrcCtrl.editResourceForm">
+        <div class="pull-right">
+            <a ui-sref="resource" class="btn btn-default">Cancel</a>
+            <button type="submit" class="btn btn-primary" ng-disabled="editRsrcCtrl.isDisabled" >Submit</button>
+        </div>
+    </formly-form>
+</form>
